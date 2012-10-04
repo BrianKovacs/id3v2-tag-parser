@@ -25,9 +25,11 @@ class id3Parsed(mp3_file):
 	# put all the attributes the user might want into a main dictionary
 	def __init__(self):
 		self.attrs = {}
-		#stuff
+		
+		# open the file
+		# get the the file cursor to the proper place (just after "id3" | "ID3")
 
 		self.ver = id3Ver(mp3_header)
 
-		# get the encoding byte
+		# get the encoding string
 		self.encoding = whichEncoding(encoding_byte)
