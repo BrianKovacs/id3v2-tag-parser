@@ -16,4 +16,18 @@ def whichEncoding(encoding_byte):
 
 def frameSplit(mp3):
 	"""Finds and returns the entirety of the next frame."""
+	# maybe do this as a generator?
 	pass
+
+# assumes that the file is of type id3v2.2 or id3v2.3
+class id3Parsed(mp3_file):
+	"Given a mp3 file name, this will parse the id3 tag."""
+	# put all the attributes the user might want into a main dictionary
+	def __init__(self):
+		self.attrs = {}
+		#stuff
+
+		self.ver = id3Ver(mp3_header)
+
+		# get the encoding byte
+		self.encoding = whichEncoding(encoding_byte)
