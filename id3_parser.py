@@ -17,11 +17,13 @@ def whichEncoding(encoding_byte):
 		$02 - UTF-16BE encoded Unicode without BOM, in ID3v2.4
 		$03 - UTF-8 encoded Unicode, in ID3v2.4
 		"""
+	# NYI
 	pass
 
 def frameSplit(mp3):
 	"""Finds and returns the entirety of the next frame."""
 	# maybe do this as a generator?
+	# NYI
 	pass
 
 # assumes that the file is of type id3v2.2 or id3v2.3
@@ -52,20 +54,21 @@ class id3Parsed():
 		# determine what the version is and react accordingly
 		self.flags = {}
 		if(self.ver == 2):
-			# the version is 2.2
-			# to be implemented
+			self.ver = V2
+			# NYI
 			pass
 		elif(self.ver == 3):
-			# the version is 2.3
-			# to be implemented
+			self.ver = V3
+			# NYI
 			pass
 		elif(self.ver == 4):
-			# the version is 2.4
-			# to be implemented
+			self.ver = V4
+			# NYI
 			pass
 		else:
-			# to be implemented
+			# NYI
 			# raise some sort of error?
+			f.close()
 			pass
 			
 		# close the file
@@ -86,13 +89,13 @@ class id3Parsed():
 		if(flagbyte and 0b00100000): self.flags["experimental"] = True
 		else: self.flags["experimental"] = False
 		
-	def flags2_3(self, flagbyte): # to be implemented
+	def flags2_3(self, flagbyte): # NYI
 		pass
 		
-	def flags2_4(self, flagbyte): # to be implemented
+	def flags2_4(self, flagbyte): # NYI
 		pass
 		
-	def tagSize(f): # to be implemented
+	def tagSize(f): # NYI
 		# 4 bytes where the MSB is zero and ignored
 		# 4 * 0b0xxxxxxx, giving a total of 28 bits
 		pass
@@ -101,4 +104,4 @@ if __name__ == "__main__":
 
 	# place holder to test the file to be opened
 	mp3_file = open("Kalimba.mp3", 'rb')
-	print(mp3_file.read(5))
+	print(mp3_file.read(3)) # should print 'ID3'
