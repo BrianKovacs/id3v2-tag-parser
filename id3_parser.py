@@ -17,7 +17,7 @@ def whichEncoding(encoding_byte):
 		$02 - UTF-16BE encoded Unicode without BOM, in ID3v2.4
 		$03 - UTF-8 encoded Unicode, in ID3v2.4
 		"""
-	assert encoding_byte <= 3 and encoding_byte >= 0, "Encoding unknown."
+	assert encoding_byte <= 3 and encoding_byte >= 0, TypeError("encoding unknown.")
 	if encoding_byte == 0:
 		pass
 	elif encoding_byte == 1:
