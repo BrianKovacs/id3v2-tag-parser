@@ -17,8 +17,15 @@ def whichEncoding(encoding_byte):
 		$02 - UTF-16BE encoded Unicode without BOM, in ID3v2.4
 		$03 - UTF-8 encoded Unicode, in ID3v2.4
 		"""
-	# NYI
-	pass
+	assert encoding_byte <= 3 and encoding_byte >= 0, "Encoding unknown."
+	if encoding_byte == 0:
+		pass
+	elif encoding_byte == 1:
+		pass
+	elif encoding_byte == 2:
+		pass
+	elif encoding_byte == 3:
+		pass
 
 def frameSplit(mp3):
 	"""Finds and returns the entirety of the next frame."""
