@@ -16,8 +16,12 @@ def whichEncoding(encoding_byte):
 		$01 - UCS-2 (UTF-16 encoded Unicode with BOM), in ID3v2.2 and ID3v2.3
 		$02 - UTF-16BE encoded Unicode without BOM, in ID3v2.4
 		$03 - UTF-8 encoded Unicode, in ID3v2.4
+		
+		Pre: encoding_byte is a single byte
+		Post: returns the encoding type as a string, or raises a ValueError
+		Side: None
 		"""
-	assert encoding_byte <= 3 and encoding_byte >= 0, TypeError("encoding unknown.")
+	assert encoding_byte <= 3 and encoding_byte >= 0, ValueError("encoding unknown")
 	if encoding_byte == 0:
 		pass
 	elif encoding_byte == 1:
@@ -28,7 +32,11 @@ def whichEncoding(encoding_byte):
 		pass
 
 def frameSplit(mp3):
-	"""Finds and returns the entirety of the next frame."""
+	"""Finds and returns the entirety of the next frame.
+		Pre: file cursor has nothing between it and the start of the next frame but null bytes
+		Post: file cursor is at the end of the current frame and returns the frame
+		Side: moves file cursor one frame
+		"""
 	# maybe do this as a generator?
 	# NYI
 	pass
