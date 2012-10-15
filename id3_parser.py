@@ -23,13 +23,13 @@ def whichEncoding(encoding_byte):
 		"""
 	assert encoding_byte <= 3 and encoding_byte >= 0, ValueError("encoding unknown")
 	if encoding_byte == 0:
-		pass
+		return "ISO-8859-1"
 	elif encoding_byte == 1:
-		pass
+		return "UCS-2"
 	elif encoding_byte == 2:
-		pass
+		return "UTF-16BE"
 	elif encoding_byte == 3:
-		pass
+		return "UTF-8"
 
 def frameSplit(mp3):
 	"""Finds and returns the entirety of the next frame.
